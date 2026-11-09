@@ -1,4 +1,4 @@
-# dsh-lang-zh
+# dsh-zh-think
 
 让 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的 agent **用简体中文进行内部推理（thinking）与回复**的插件。
 
@@ -23,7 +23,7 @@ DSH 的系统提示词默认是英文，模型因此习惯用英文推理。思�
 
 ```js
 ctx.systemPrompt.section({
-  name: 'plugin:lang-zh',
+  name: 'plugin:zh-think',
   order: 10300,
   text: '始终使用简体中文进行内部推理（thinking）和面向用户的回复…',
 })
@@ -35,7 +35,7 @@ ctx.systemPrompt.section({
 ## 安装
 
 ```powershell
-dsh plugin --profile desktop add dsh-lang-zh
+dsh plugin --profile desktop add dsh-zh-think
 ```
 
 把 `desktop` 换成你要启用的 profile 名（例如 `web`）。重启 DSH 后生效。
@@ -47,8 +47,8 @@ dsh plugin --profile desktop add dsh-lang-zh
 插件行支持以下可选配置：
 
 ```yaml
-- id: dsh-lang-zh
-  name: dsh-lang-zh
+- id: dsh-zh-think
+  name: dsh-zh-think
   config:
     enabled: true          # false 则不注册 section
     instruction: '……'      # 覆盖默认的中文要求文本
@@ -63,7 +63,7 @@ dsh plugin --profile desktop add dsh-lang-zh
 |---|---|---|
 | 配置 | 插件行加 `config: { enabled: false }` | 重启 |
 | 环境变量 | 设 `DSH_LANG_ZH_OFF=1` | 重启 |
-| 标记文件 | 在 `$DSH_HOME` 下放一个空文件 `lang-zh.off` | 重启 |
+| 标记文件 | 在 `$DSH_HOME` 下放一个空文件 `zh-think.off` | 重启 |
 
 关闭状态下插件仍会装载，只是不注册 section，**不改变任何其他行为**。删掉标记文件并重启即可恢复。
 
