@@ -62,7 +62,7 @@ dsh plugin --profile desktop add dsh-zh-think
 | 方式 | 操作 | 生效 |
 |---|---|---|
 | 配置 | 插件行加 `config: { enabled: false }` | 重启 |
-| 环境变量 | 设 `DSH_LANG_ZH_OFF=1` | 重启 |
+| 环境变量 | 设 `DSH_ZH_THINK_OFF=1` | 重启 |
 | 标记文件 | 在 `$DSH_HOME` 下放一个空文件 `zh-think.off` | 重启 |
 
 关闭状态下插件仍会装载，只是不注册 section，**不改变任何其他行为**。删掉标记文件并重启即可恢复。

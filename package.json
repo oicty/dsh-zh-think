@@ -1,6 +1,6 @@
 {
   "name": "dsh-zh-think",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DSH 插件：要求 agent 用简体中文进行内部推理与回复（追加式 section，不修改任何既有配置）",
   "type": "module",
   "main": "lib/index.js",
