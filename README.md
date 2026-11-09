@@ -55,6 +55,42 @@ dsh plugin --profile desktop add dsh-zh-think
     order: 10300           # 覆盖 section 排序位置
 ```
 
+## 改文案（不用重启）
+
+编辑 `$DSH_HOME/zh-think.txt`，写入你想要的完整文案：
+
+```powershell
+notepad $env:DSH_HOME\zh-think.txt
+```
+
+**保存后，下一个请求就会生效，不需要重启 DSH。**
+
+原因：section 的 `text` 注册成函数，DSH 在每次装配提示词时都会重新求值。只有改插件的**逻辑**（换 section 名、order 等）才需要重启。
+
+文本优先级：
+
+| 优先级 | 来源 | 生效方式 |
+|---|---|---|
+| 1 | `config.instruction` | 随配置文件热重载 |
+| 2 | `$DSH_HOME/zh-think.txt` | **每次请求重新读取** |
+| 3 | 内置默认 | — |
+
+删掉 `zh-think.txt` 会回退到内置默认。
+
+> 文案里避免写 `{{` 和 `}}`——它们会被当作变量插值，未知变量会导致提示词装配报错。
+
+## 发版（改完代码后）
+
+仓库自带 `release.ps1`，一条命令完成升版本、提交、打 tag、推送：
+
+```powershell
+.\release.ps1          # 0.2.0 -> 0.2.1
+.\release.ps1 minor    # -> 0.3.0
+.\release.ps1 major    # -> 1.0.0
+```
+
+然后按提示手动执行 `npm publish`（需要浏览器 2FA 确认，无法自动化）。
+
 ## 临时关闭
 
 三种方式，优先级从高到低：
