@@ -73,6 +73,24 @@ dsh plugin --profile desktop add dsh-zh-think
 - **单一语言** — section 内容是固定文本，不做按会话切换语言。需要多语言时，可以改成按 `AssembleContext` 动态返回文本。
 - **只影响 system prompt** — 它约束的是推理与回复的语言，不改变工具输出、日志、代码的原始语言。
 
+## 相关项目
+
+本插件的功能与 [liangzz1998/dsh-thinking-language](https://github.com/liangzz1998/dsh-thinking-language) 重叠。那个项目支持思考语言与回复语言分别配置、追加自定义要求，设置更完整，且发布时间早于本项目。
+
+本项目为独立实现（未复制其代码），仅作为个人使用与二次修改的基础，**未提交插件市场收录**。若你需要更完整的语言配置，建议直接使用上面那个项目。
+
+## 安装（快速）
+
+```powershell
+# 从 npm 安装（推荐，已发布 0.1.0）
+dsh plugin --profile desktop add dsh-zh-think
+
+# 或直接从 GitHub 安装
+dsh plugin --profile desktop add github:oicty/dsh-zh-think
+```
+
+装完重启 DSH 生效。
+
 ## License
 
 [MIT](LICENSE)
