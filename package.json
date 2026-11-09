@@ -1,0 +1,41 @@
+{
+  "name": "dsh-lang-zh",
+  "version": "0.1.0",
+  "description": "DSH 插件：要求 agent 用简体中文进行内部推理与回复（追加式 section，不修改任何既有配置）",
+  "type": "module",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "i18n",
+    "chinese",
+    "zh-cn",
+    "reasoning",
+    "system-prompt"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oicty/dsh-lang-zh.git"
+  },
+  "homepage": "https://github.com/oicty/dsh-lang-zh#readme",
+  "bugs": {
+    "url": "https://github.com/oicty/dsh-lang-zh/issues"
+  },
+  "author": "oicty",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
